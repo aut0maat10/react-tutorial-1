@@ -54,7 +54,7 @@ class Article extends Component {
   //remember that this is not HTML!!
   //https://reactjs.org/docs/introducing-jsx.html
   render() {
-    const { headline, summary, showSummary, image } = this.props;
+    const { headline, summary, showSummary, image, category, shareLink} = this.props;
     const summaryDisplay = showSummary ? <div className="article-summary">{summary}</div> : '';
     const defaultImage = 'https://i.imgur.com/Bzr6JZy.jpg';
 
@@ -71,11 +71,14 @@ class Article extends Component {
       <div className="article-card">
         <h3 className="headline">{headline}</h3>
         {img}
+        <div className="category">
+          <p>{category}</p>
+        </div>
         <div className="overlay">
           <div className="summary">
             {summary}
           </div>
-          <button className="btn">Read More &rarr;</button>
+          <a className="btn" href={shareLink}>Read More <span className="arrow">&rarr;</span></a>
         </div>
       </div>
     )

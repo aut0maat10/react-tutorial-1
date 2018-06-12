@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   render() {
-    const { loaded, error, articles, showSummaries } = this.state;
+    const { loaded, error, articles, showSummaries, category } = this.state;
     //  code above is equal to this:
     //  const loaded = this.state.loaded;
     //  const error = this.state.error;
@@ -81,7 +81,9 @@ class App extends Component {
             image={article.image}
             headline={article.headline}
             summary={article.summary}
-            showSummary={showSummaries}
+            category={article.category}
+            shareLink={article.share_link}
+            /* showSummary={showSummaries} */
           />
         );
       });
