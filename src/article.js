@@ -58,6 +58,7 @@ class Article extends Component {
     const summaryDisplay = showSummary ? <div className="article-summary">{summary}</div> : '';
     const defaultImage = 'https://i.imgur.com/Bzr6JZy.jpg';
 
+    // add default image if no image available
     let img;
     if (!image) {
       img = <img className="img" src={defaultImage} />
@@ -71,7 +72,6 @@ class Article extends Component {
         <h3 className="headline">{headline}</h3>
         {img}
         <div className="overlay">
-          {/* {summaryDisplay} */}
           <div className="summary">
             {summary}
           </div>

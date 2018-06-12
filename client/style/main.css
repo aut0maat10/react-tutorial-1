@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css?family=EB+Garamond|Roboto'); */
 @import url('https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300');
 
 body {
@@ -57,16 +56,6 @@ body {
   object-fit: cover;
 }
 
-/* .img-wrapper {
-  
-} */
-
-/* .img {
-  background-size: cover;
-  background-position: center center;
-  max-width: 100%;
-} */
-
 .headline {
   /* text-transform: uppercase;  */
   font-family: 'Oswald', sans-serif;
@@ -79,10 +68,6 @@ body {
   grid-gap: 5px;
   grid-template-columns: repeat(3, 1fr);
   position: absolute;
-  /* top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   height: 100%;
   width: 100%;
   opacity: 0;
@@ -91,12 +76,6 @@ body {
   color: black;
   background-color: #fff;
 }
-
-/* .article-summary {
-  font-family: 'Helvetica Neue'; 
-  color: #2e2e2e;
-} */
-
 
 .article-card:hover .overlay {
   opacity: 1;
