@@ -1,26 +1,4 @@
-import React, { Component } from 'react';
-
-//import any other components here
-import HelloWorld from '../src/helloworld';
-
-//import CSS here, so webpack knows to include in bundle
-import style from '../client/style/main.css';
-
-//this is the component that generates the body of the page
-class App extends Component {
-
-  render() {
-    return (
-      <div>
-        <HelloWorld />
-      </div>
-    );
-  }
-}
-
-export default App;
-
-/* STEP 2, MORE COMPLICATED CODE FOLLOWS:
+// STEP 2, MORE COMPLICATED CODE FOLLOWS:
 
 import React, { Component } from 'react';
 
@@ -36,14 +14,15 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
+    this.toggleSummaries = this.toggleSummaries.bind(this);
 
     //default state
     //this keeps track of "live" data on the browser
     this.state = {
       articles: null,
       error: null,
-      loaded: false
+      loaded: false,
+      showSummaries: false
     };
   }
 
@@ -71,12 +50,15 @@ class App extends Component {
   }
 
   //click handler for button
-  toggle() {
+  toggleSummaries() {
     console.log('toggle button clicked');
+    this.setState((prevState, props) => ({
+      showSummaries: !prevState.showSummaries
+    }))
   }
 
   render() {
-    const {loaded, error, articles} = this.state;
+    const { loaded, error, articles, showSummaries } = this.state;
     //  code above is equal to this:
     //  const loaded = this.state.loaded;
     //  const error = this.state.error;
@@ -96,7 +78,10 @@ class App extends Component {
         articleJSX.push(
           <Article
             key={idx}
+            image={article.image}
             headline={article.headline}
+            summary={article.summary}
+            showSummary={showSummaries}
           />
         );
       });
@@ -108,11 +93,13 @@ class App extends Component {
       // }
 
       return (
-        <div>
-          <button onClick={this.toggle}>Toggle Something</button>
+        <div className="wrapper">
           <HelloWorld />
-          <HelloWorld message="Hi!" />
-          {articleJSX}
+          {/* <button onClick={this.toggleSummaries}>{showSummaries ? 'Hide' : 'Show'}</button> */}
+          {/* <HelloWorld message="Hi!" /> */}
+          <div className="article-wrapper">
+            {articleJSX}
+          </div>
         </div>
       );
 
@@ -121,4 +108,4 @@ class App extends Component {
 }
 
 export default App;
-*/
+

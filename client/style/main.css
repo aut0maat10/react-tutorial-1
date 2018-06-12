@@ -1,5 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css?family=EB+Garamond|Roboto'); */
+@import url('https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300');
+
 body {
   background-color: #eee;
+  font-family: 'Roboto', sans-serif;
 }
 
 .clicked {
@@ -12,4 +16,105 @@ body {
 
 .imagetest {
   background: url('../../assets/cyberman.jpg');
+}
+
+.wrapper {
+  text-align: center
+}
+
+.article-wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-gap: 15px;
+}
+
+.article-card {
+  overflow: hidden;
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  max-height: 350px;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+}
+
+.article-card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.article-card img {
+  grid-column: 1 / 1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .img-wrapper {
+  
+} */
+
+/* .img {
+  background-size: cover;
+  background-position: center center;
+  max-width: 100%;
+} */
+
+.headline {
+  /* text-transform: uppercase;  */
+  font-family: 'Oswald', sans-serif;
+  color: #2e2e2e;
+}
+
+.overlay {
+  display: grid;
+  align-content: center;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .6s ease;
+  transform: translateY(100%);
+  color: black;
+  background-color: #fff;
+}
+
+/* .article-summary {
+  font-family: 'Helvetica Neue'; 
+  color: #2e2e2e;
+} */
+
+
+.article-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  background: white;
+  color: black;
+  border: 2px solid lightgreen;
+  grid-column: 2 / 3;
+}
+
+.summary {
+  grid-column: 1 / -1;
+  padding: 15px;
+}
+
+.overlay .headline {
+  grid-column: 1 / -1;
 }

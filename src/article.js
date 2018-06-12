@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import style from '../client/style/main.css';
 
 //Basic Article Component
 class Article extends Component {
@@ -35,7 +36,7 @@ class Article extends Component {
   shouldComponentUpdate() {
     return true;
   }
-  getSnapshotBeforeUpdate(prevProps, prevState){
+  getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('get snapshot before update');
     return { foo: 'bar' };
   }
@@ -53,7 +54,31 @@ class Article extends Component {
   //remember that this is not HTML!!
   //https://reactjs.org/docs/introducing-jsx.html
   render() {
-    return <div>Hello World</div>;
+    const { headline, summary, showSummary, image } = this.props;
+    const summaryDisplay = showSummary ? <div className="article-summary">{summary}</div> : '';
+    const defaultImage = 'https://i.imgur.com/Bzr6JZy.jpg';
+
+    let img;
+    if (!image) {
+      img = <img className="img" src={defaultImage} />
+    }
+    else {
+      img = <img className="img" src={image} />
+    }
+
+    return (
+      <div className="article-card">
+        <h3 className="headline">{headline}</h3>
+        {img}
+        <div className="overlay">
+          {/* {summaryDisplay} */}
+          <div className="summary">
+            {summary}
+          </div>
+          <button className="btn">Read More &rarr;</button>
+        </div>
+      </div>
+    )
   }
 };
 
