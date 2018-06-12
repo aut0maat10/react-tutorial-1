@@ -57,8 +57,8 @@ body {
 }
 
 .headline {
-  /* text-transform: uppercase;  */
   font-family: 'Oswald', sans-serif;
+  font-size: 1.3em;
   color: #2e2e2e;
 }
 
@@ -71,15 +71,15 @@ body {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .6s ease;
-  transform: translateY(100%);
+  transition: .5s;
+  /* transform: translateY(100%); */
   color: black;
   background-color: #fff;
 }
 
 .article-card:hover .overlay {
   opacity: 1;
-  transform: translateY(0);
+  /* transform: translateY(0); */
 }
 
 .btn {
