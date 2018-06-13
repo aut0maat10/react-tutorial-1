@@ -76,7 +76,7 @@ class Article extends Component {
         </div>
         <div className="overlay">
           <div className="summary">
-            {summary}
+            <p>{summary}</p>
           </div>
           <a className="btn" href={shareLink}>Read More <span className="arrow">&rarr;</span></a>
         </div>
